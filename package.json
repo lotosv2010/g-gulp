@@ -1,6 +1,6 @@
 {
   "name": "gb-gulp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "static web app workfkow",
   "keywords": [
     "g-gulp",
@@ -12,7 +12,10 @@
   },
   "license": "MIT",
   "author": "robin",
-  "files": ["lib", "bin"],
+  "files": [
+    "lib",
+    "bin"
+  ],
   "main": "lib/index.js",
   "bin": "bin/g-gulp.js",
   "directories": {
@@ -22,8 +25,7 @@
     "type": "git",
     "url": "https://github.com/lotosv2010/g-gulp.git"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "@babel/core": "^7.18.0",
     "@babel/preset-env": "^7.18.0",
