@@ -1,4 +1,5 @@
-const { series, parallel } = require('gulp');
+// const { series, parallel, src, dest } = require('gulp');
+const { series, parallel, src, dest } = require('./gulp/lib');
 const fs = require('fs');
 const through = require('through2');
 
@@ -47,13 +48,15 @@ async function asyncTask() {
   console.log('asyncTask');
 }
 function streamTask() {
-  return fs.createReadStream('input.txt')
-    .pipe(through((chunk, encoding, next) => {
-      setTimeout(() => {
-        next(null, chunk);
-      }, 1000);
-    }))
-    .pipe(fs.createWriteStream('output.txt'))
+  // return fs.createReadStream('README.md')
+  //   .pipe(through((chunk, encoding, next) => {
+  //     setTimeout(() => {
+  //       next(null, chunk);
+  //     }, 1000);
+  //   }))
+  //   .pipe(fs.createWriteStream('output.txt'));
+  return src('README.md')
+    .pipe(dest('dist'));
 }
 
 exports.series = series(oneTask, twoTask, threeTask);
