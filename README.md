@@ -1,12 +1,21 @@
 # g-gulp
+
 自动化构建模板
+
+## development
+
+```shell
+git clone https://github.com/g-gulp/g-gulp.git
+cd g-gulp
+pnpm link -g
+```
 
 ## Usage
 
 - 安装
 
 ```shell
-pnpm add -D gb-gulp
+pnpm add -D g-gulp
 ```
 
 - 项目中新建 g-gulp.config.js 文件
@@ -76,9 +85,9 @@ module.exports = { data, build };
 
 ```shell
 "scripts": {
-  "clean": "gb-gulp clean",
-  "build": "gb-gulp build",
-  "dev": "gb-gulp dev"
+  "clean": "g-gulp clean",
+  "build": "g-gulp build",
+  "dev": "g-gulp dev"
 }
 ```
 

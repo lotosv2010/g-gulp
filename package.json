@@ -1,7 +1,7 @@
 {
-  "name": "gb-gulp",
-  "version": "0.1.1",
-  "description": "static web app workfkow",
+  "name": "g-gulp",
+  "version": "1.0.0",
+  "description": "static web app workflow",
   "keywords": [
     "g-gulp",
     "gulp"
@@ -16,35 +16,34 @@
     "lib",
     "bin"
   ],
-  "main": "lib/index.js",
-  "bin": "bin/g-gulp.js",
+  "main": "gulp/lib/index.js",
+  "bin": {
+    "g-gulp": "./gulp/bin/gulp.js"
+  },
   "directories": {
-    "lib": "lib"
+    "lib": "gulp"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/lotosv2010/g-gulp.git"
   },
-  "scripts": {},
-  "dependencies": {
-    "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
-    "browser-sync": "^2.27.10",
-    "del": "^6.1.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^6.2.0",
-    "gulp-load-plugins": "^2.0.7",
-    "gulp-sass": "^5.1.0",
-    "gulp-swig": "^0.9.1",
-    "gulp-uglify": "^3.0.2",
-    "gulp-useref": "^5.0.0",
-    "sass": "^1.52.1"
+  "scripts": {
+    "clean": "g-gulp clean",
+    "build": "cross-env NODE_ENV=production g-gulp build",
+    "dev": "cross-env NODE_ENV=development g-gulp dev"
   },
   "engines": {
     "node": ">=6"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^11.3.0",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
+    "replace-homedir": "^2.0.0",
+    "through2": "^4.0.2",
+    "undertaker": "^2.0.0",
+    "vinyl-fs": "^4.0.0"
   }
 }
