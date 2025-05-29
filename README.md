@@ -97,4 +97,11 @@ module.exports = { data, build };
 pnpm dev
 pnpm build
 pnpm clean
+
+g-gulp
+g-gulp series
+g-gulp parallel
+g-gulp async
+g-gulp promise
+g-gulp stream
 ```

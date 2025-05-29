@@ -22,6 +22,6 @@ const exported = require(configPath)
 registerExports(gulpInst, exported);
 
 // 运行任务
-gulpInst.series(toRun)(() => {
+gulpInst.parallel(toRun)(() => {
   console.log('done')
 })
