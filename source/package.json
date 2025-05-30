@@ -1,0 +1,52 @@
+{
+  "name": "g-gulp",
+  "version": "1.0.0",
+  "description": "static web app workflow",
+  "keywords": [
+    "g-gulp",
+    "gulp"
+  ],
+  "homepage": "https://github.com/lotosv2010/g-gulp",
+  "bugs": {
+    "url": "https://github.com/lotosv2010/g-gulp/issues"
+  },
+  "license": "MIT",
+  "author": "robin",
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "main": "gulp/lib/index.js",
+  "bin": {
+    "g-gulp": "./gulp/bin/gulp.js"
+  },
+  "directories": {
+    "lib": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lotosv2010/g-gulp.git"
+  },
+  "scripts": {
+    "clean": "g-gulp clean",
+    "build": "cross-env NODE_ENV=production g-gulp build",
+    "dev": "cross-env NODE_ENV=development g-gulp dev"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^11.3.0",
+    "glob-parent": "^6.0.2",
+    "global": "^4.4.0",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
+    "replace-homedir": "^2.0.0",
+    "through2": "^4.0.2",
+    "to-absolute-glob": "^3.0.0",
+    "undertaker": "^2.0.0",
+    "vinyl-fs": "^4.0.0"
+  }
+}
