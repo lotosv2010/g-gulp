@@ -2,6 +2,8 @@
 const { series, parallel, src, dest } = require('./gulp/lib');
 const fs = require('fs');
 const through = require('through2');
+const gulpPreFixer = require('./plugins/gulp-prefixer');
+const gulpBabel = require('./plugins/gulp-babel');
 
 console.log('gulpfile', process.env.NODE_ENV);
 const defaultTask = (done) => {
@@ -55,8 +57,11 @@ function streamTask(done) {
   //     }, 1000);
   //   }))
   //   .pipe(fs.createWriteStream('output.txt'));
-  return src('*.md')
-    .pipe(dest('dist')).on('finish', (done1) => {
+  return src('./src/*.js')
+    .pipe(gulpPreFixer('/**prepended**/\n'))
+    .pipe(gulpBabel({ presets: ["@babel/preset-env"] }))
+    .pipe(dest('dist'))
+    .on('finish', () => {
       done()
     });
 }
