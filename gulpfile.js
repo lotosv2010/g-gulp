@@ -47,7 +47,7 @@ async function asyncTask() {
   });
   console.log('asyncTask');
 }
-function streamTask() {
+function streamTask(done) {
   // return fs.createReadStream('README.md')
   //   .pipe(through((chunk, encoding, next) => {
   //     setTimeout(() => {
@@ -55,8 +55,10 @@ function streamTask() {
   //     }, 1000);
   //   }))
   //   .pipe(fs.createWriteStream('output.txt'));
-  return src('README.md')
-    .pipe(dest('dist'));
+  return src('*.md')
+    .pipe(dest('dist')).on('finish', (done1) => {
+      done()
+    });
 }
 
 exports.series = series(oneTask, twoTask, threeTask);

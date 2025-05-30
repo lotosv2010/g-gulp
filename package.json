@@ -39,10 +39,13 @@
     "chalk": "^4.1.2",
     "cross-env": "^7.0.3",
     "fs-extra": "^11.3.0",
+    "glob-parent": "^6.0.2",
+    "global": "^4.4.0",
     "gulp": "^5.0.0",
     "gulp-cli": "^3.0.0",
     "replace-homedir": "^2.0.0",
     "through2": "^4.0.2",
+    "to-absolute-glob": "^3.0.0",
     "undertaker": "^2.0.0",
     "vinyl-fs": "^4.0.0"
   }

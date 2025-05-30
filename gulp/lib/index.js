@@ -1,7 +1,8 @@
 // const Undertaker = require('undertaker');
 const Undertaker = require('./undertaker');
 const { inherits } = require('util');
-const vfs = require('vinyl-fs');
+// const vfs = require('vinyl-fs');
+const vfs = require('../../vinyl-fs');
 
 function Gulp() {
   Undertaker.call(this);
